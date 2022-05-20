@@ -15,42 +15,50 @@
 # 출력은 표준 출력을 사용한다. 
 # 만일 입력 괄호 문자열이 올바른 괄호 문자열(VPS)이면 “YES”, 아니면 “NO”를 한 줄에 하나씩 차례대로 출력해야 한다. 
 
-import sys
+# import sys
 
-N = int(sys.stdin.readline())
-index = 0
-A = 0
-B = 0
+N = int(input())
+
 for _ in range(N):
-    VPScheck = sys.stdin.readline()
+    A = 0
+    B = 0
+    check = False
+    VPScheck = input()
     for i in range(len(VPScheck)):
-        if i == 0:
-            if VPScheck[i] == "(":
-                A += 1
-            else:
-                print("1")
-                break
-        elif i == (len(VPScheck)-1):
-            if VPScheck[i] == ")":
-                B += 1
-            else:
-                print("2")
-                break
-        else:
-            if VPScheck[i] == "(":
-                A += 1
-            elif VPScheck[i] == ")":
-                B += 1
-            else:
-                if VPScheck[i-1] == "(" & VPScheck[i+1] == ")":
-                    print("3")
+        if A >= 0:
+            if i == 0:
+                if VPScheck[i] == "(":
+                    A += 1
                 else:
-                    print("4")
+                    check = True
                     break
-    if A == B:
+            elif i == (len(VPScheck)-1):
+                if VPScheck[i] == ")":
+                    A -= 1
+                else:
+                    check = True
+                    break        
+            else:
+                if VPScheck[i] == "(":
+                    A += 1
+                elif VPScheck[i] == ")":
+                    A -= 1
+                else:
+                    if (VPScheck[i-1] == "(") & (VPScheck[i+1] == ")"):
+                        continue
+                    else:
+                        check = True
+                        break
+        else:
+            check = True
+            break
+    # print("A : ", A, "B : ", B, "check : ", check)
+
+    if (A == B) & (check != True):
         print("YES")
     else:
         print("NO")
-    print("A : ", A, "B : ", B)
-    print(len(VPScheck))
+
+    # print(len(VPScheck))
+    # print(len(VPScheck)-1)
         
