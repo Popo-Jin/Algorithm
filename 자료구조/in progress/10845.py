@@ -25,6 +25,7 @@ import sys
 N = int(sys.stdin.readline())
 
 for _ in range(N):
-    queue que
+    
     com = list(map(str, sys.stdin.readline()))
     if com[0] == "push":
+       # 큐 만드는법? 
