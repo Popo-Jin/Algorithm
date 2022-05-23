@@ -18,13 +18,41 @@
 # 출력
 # 출력해야하는 명령이 주어질 때마다, 한 줄에 하나씩 출력한다.
 
-import queue
+from collections import deque
 import sys
 
 
 N = int(sys.stdin.readline())
-
+q = deque()
+# print(N)
 for _ in range(N):
-    queue que
-    com = list(map(str, sys.stdin.readline()))
+    com = list(map(str, sys.stdin.readline().split()))
+    # print(com)
     if com[0] == "push":
+        q.append(com[1])
+    elif com[0] == "pop":
+        if(len(q) == 0):
+            print(-1)
+        else:
+            print(q.popleft())
+    elif com[0] == "size":
+        print(len(q))
+    elif com[0] == "empty":
+        if(len(q) == 0):
+            print(1)
+        else:
+            print(0)
+    elif com[0] == "front":
+        if(len(q) == 0):
+            print(-1)
+        else:
+            print(q[0])
+    elif com[0] == "back":
+        if(len(q) == 0):
+            print(-1)
+        else:
+            print(q[len(q)-1])
+    else:
+        print("something wrong")
+        break
+
