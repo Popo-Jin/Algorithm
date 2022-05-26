@@ -21,26 +21,30 @@ A = list(map(str,sys.stdin.readline().split()))
 M = int(sys.stdin.readline())
 B = list(map(str,sys.stdin.readline().split()))
 A.sort()
-print(A)
-print(B)
+# print(A)
+# print(B)
 def binary_search(target, data):
     start = 0
-    end = len(A)-1
-    print("end : ", end)
+    end = len(data)-1
+    # print("end : ", end)
     while start <= end:
+        # print("start:",start,"end:",end)
         mid = (start+end)//2 
         #// -> 나누기 후 소숫점 자리 버림
-
-        if A[mid] == target:
+        # print("mid : ", mid)
+        # print("data[mid]", data[mid])
+        if data[mid] == target:
+            # print("check")
             return mid
-        elif A[mid] < target:
+        elif data[mid] < target:
             start = mid+1
         else:
             end = mid-1
 
 for i in range(len(B)):
     C = binary_search(B[i], A)
-    if  C:   
+    # print("C:",C)
+    if C is not None:
         print(1)
     else:
         print(0)
