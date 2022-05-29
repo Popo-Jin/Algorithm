@@ -16,11 +16,18 @@
 // 삭제하지 않고, 최근에 들어온 데이터를 확인하는 것이다.
 
 
-package stack;
+import java.util.Stack;
 
-public interface Stack<T> {
-    void push(T data);
-    T pop();
-    T peek();
-    int size();
+public class StackExample {
+    public static void main(String[] args) {
+        Stack<String> stack = new Stack<>();
+        stack.push("1th");
+        stack.push("2nd");
+        stack.push("3rd");
+        System.out.println("stack: "+stack);
+        System.out.println(stack.pop());
+        System.out.println(stack.peek());
+        System.out.println(stack.pop());
+        System.out.println("stack: "+stack);
+    };
 }
