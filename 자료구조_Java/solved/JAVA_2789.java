@@ -1,3 +1,4 @@
+package solved;
 //2789
 
 import java.io.BufferedReader;
@@ -5,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
+public class JAVA_2789 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine();
@@ -13,7 +14,8 @@ public class Main {
         int num = Integer.parseInt(st.nextToken());
         int max = Integer.parseInt(st.nextToken());
         int max_result = 0;
-        String arr[] = br.readLine().split(" ");
+        String[] arr = new String[num];
+        arr = br.readLine().split(" ");
         for(int i=0;i<arr.length;i++) {
             for (int j = i+1; j < arr.length; j++) {
                 for (int k = j+1; k < arr.length; k++) {
