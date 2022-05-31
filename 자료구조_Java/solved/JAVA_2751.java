@@ -1,3 +1,4 @@
+package solved;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -7,7 +8,7 @@ import java.util.Arrays;
 
 //2751
 
-public class Main {
+public class JAVA_2751 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
