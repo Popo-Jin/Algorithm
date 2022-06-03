@@ -1,51 +1,53 @@
+//10815
+
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
+import java.nio.file.FileStore;
 import java.util.Arrays;
-import java.util.Comparator;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        String[] k = new String[N];
-        for (int i = 0; i < k.length; i++) {
-            k[i] = br.readLine();
-        }
-        System.out.println("Before : " + Arrays.toString(k));
-        quicksort(k);
-        System.out.println("After : " + Arrays.toString(k));
+
+    public static void main(String[] args) throws IOException{
+
+        // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        // int N = Integer.parseInt(br.readLine());
+        // int[] arrN = new int[N];
+        // StringTokenizer st = new StringTokenizer(br.readLine());
+        // for (int i = 0; i < arrN.length; i++) {
+        //     arrN[i] = Integer.parseInt(st.nextToken());
+        // }
+        // int M = Integer.parseInt(br.readLine());
+        // int[] arrM = new int[M];
+        // for (int i = 0; i < arrM.length; i++) {
+        //     arrM[i] = Integer.parseInt(st.nextToken());
+        // }
+        int[] arr_test = {4,20,49,1,5,8,3,6};
+        System.out.println(Arrays.toString(arr_test));
+        mergesort(arr_test);
+        System.out.println(Arrays.toString(arr_test));
 
     }
 
-    public static void quicksort(String s[]) {
-        int start = 0;
-        int end = s.length;
-        int pivot = start;
-        String temp = "";
-        System.out.println(s.length);
-        for (int i = 0; i < s.length; i++) {
-            if (s[start+i].length() < s[end-1-i].length()) {
-                return;
-            }
-            if (s[start+i].length() == s[end].length()) {
-                if (s[start+i].compareTo(s[end]) > 0) {
-                    temp = s[end];
-                    s[end] = s[start+i];
-                    s[start+i] = temp;
-                } else {
-                    return;
-                }
-            }
-            if (s[start+i].length() > s[end].length()) {
-                temp = s[end];
-                s[end] = s[start+i];
-                s[start+i] = temp;
-            }
-            System.out.println("s[start+i].length : " + s[start+i].length());
-            System.out.println("s[start+i].length : " + s[end].length());
+    private static void mergesort(int[] arr) {
+        int tmp[] = new int[arr.length];
+        mergesort(arr, tmp, 0, arr.length-1);
+    }
+
+    private static void mergesort(int[] arr, int[] tmp, int start, int end) {
+        if(start < end) {
+            int mid = (start + end) / 2;
+            mergesort(arr, tmp, start, mid);
+            mergesort(arr, tmp, mid+1, end);
+            merge(arr, tmp, start, mid, end);
+
         }
+    }
+
+    private static void merge(int[] arr, int[] tmp, int start, int mid, int end) {
+        
     }
 }
