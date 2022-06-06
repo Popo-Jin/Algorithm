@@ -48,6 +48,18 @@ public class Main {
     }
 
     private static void merge(int[] arr, int[] tmp, int start, int mid, int end) {
-        
+        int left = start;
+        int right = mid+1;
+        int index = start;
+
+        // for(int i=left;i)
+        if (left > right) {
+            tmp[index] = arr[left];
+            left++;
+        } else {
+            tmp[index] = arr[right];
+            right++;
+        }
+        index++;
     }
 }
