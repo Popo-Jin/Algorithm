@@ -53,7 +53,7 @@ public class Main {
         int index = start;
 
         // for(int i=left;i)
-        if (left > right) {
+        if (arr[left] > arr[right]) {
             tmp[index] = arr[left];
             left++;
         } else {
@@ -61,5 +61,12 @@ public class Main {
             right++;
         }
         index++;
+
+        for (int i = index; i < mid; i++) {
+            tmp[index] = arr[left];
+        }
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = tmp[i];
+        }
     }
 }
