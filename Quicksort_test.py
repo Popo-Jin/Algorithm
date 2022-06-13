@@ -1,25 +1,49 @@
-num = [-4,9,12,-42,0,3,4,6,7]
+num = [3,4,2,10,8,1,6,7]
 
-def quicksort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr)//2]
-    less_arr, equal_arr, great_arr = [], [], []
-    for num in arr:
-        if num < 0:
-            num *= -1
-        if num < pivot:
-            less_arr.append(num)
-        elif num == pivot:
-            equal_arr.append(num)
-        else:
-            great_arr.append(num)  
-    return quicksort(less_arr) + equal_arr + quicksort(great_arr)
+# def quicksort(arr):
+#     def sort(low, high):
+#         if high <= low:
+#             return
+        
+#         mid = partition(low, high)
+#         sort(low, mid-1)
+#         sort(mid, high)
 
-result = quicksort(num)
-result_arr = []
-for a in result:
-    a *= a
-    result_arr.append(a)
-print(result_arr)
+#     def partition(low, high):
+#         pivot = arr[(low+high)//2]
+#         while low <= high:
+#             while arr[low] < pivot:
+#                 low += 1
+#             while arr[high] > pivot:
+#                 high += 1
+#             if low <= high:
+#                 arr[low], arr[high] = arr[high], arr[low]
+#                 low, high = low+1, high-1
+#         return low
 
+#     return sort(0, len(arr)-1)
+
+def quick_sort(arr):
+    def sort(low, high):
+        if high <= low:
+            return
+
+        mid = partition(low, high)
+        sort(low, mid - 1)
+        sort(mid, high)
+
+    def partition(low, high):
+        pivot = arr[(low + high) // 2]
+        while low <= high:
+            while arr[low] < pivot:
+                low += 1
+            while arr[high] > pivot:
+                high -= 1
+            if low <= high:
+                arr[low], arr[high] = arr[high], arr[low]
+                low, high = low + 1, high - 1
+        return low
+
+    return sort(0, len(arr) - 1)
+
+print(quick_sort(num))
