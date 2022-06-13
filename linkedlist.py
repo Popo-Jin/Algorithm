@@ -2,6 +2,7 @@
 Node -> data, next로 이루어짐
 head -> 시작노드
 """
+# 할것 -> self.head를 Node가 아닌 link만으로 구현해보기
 class Node:
     def __init__(self, data):
         self.data = data
