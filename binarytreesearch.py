@@ -53,7 +53,17 @@ class bts:
                 parent.left = now.left
             else:
                 parent.right = now.right
-        else: #자식노드가 둘다 존재할 경우
+        else: #자식노드가 둘다 존재할 경우, 왼쪽 최댓값 또는 오른쪽 최솟값으로 교체
+            node_max_left = now.left
+            while node_max_left.right != None:
+                node_max_left = node_max_left.right
+            if parent.left == now.left:
+                parent.left = node_max_left
+            else:
+                parent.right = node_max_left
+
+# delete가 좀 어렵네, 지우고 다시
+                
             
         
     
@@ -82,4 +92,4 @@ a.insert(5)
 a.insert(17)
 a.delete(9)
 # a.search(root, 10)
-# a.preorder(root)
+a.preorder(root)
