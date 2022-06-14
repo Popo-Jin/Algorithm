@@ -1,3 +1,6 @@
+# 스택을 사용하는 이유
+# - 이전 상태를 기억하기 위해
+# ex)재귀호출, 브라우저 뒤로가기, undo
 class Stack:
     def __init__(self):
         self.stack_list = []

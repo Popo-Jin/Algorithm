@@ -1,3 +1,7 @@
+# 큐를 사용하는 이유
+# - 순서대로 처리하기 위해
+# CPU 태스크, 은행업무, 프로세스 관리
+
 class Queue:
     def __init__(self):
         self.queue_list = []
