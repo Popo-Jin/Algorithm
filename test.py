@@ -1,3 +1,23 @@
+from random import randint
+
+a = [0,1,2,3,4,5]
+b = []
+for _ in range(0,100):
+    b.append(f"{randint(0,5)} {randint(0,5)}") 
+print(b)
+arr = set(b)
+print(arr)
+id_dict = {id:[] for id in a}
+cnt = {cnt:[] for cnt in a}
+# print(len(arr))
+# print(arr.pop().split(" "))
+a1, a2 = arr.pop().split(" ")
+print(a1,"and",a2)
+# for i in range(0, len(arr)):
+#     set_id, set_cnt = arr[i].split(" ")
+print(id_dict)
+
+
 # from collections import deque
 # import time
 
