@@ -28,3 +28,25 @@
 #         print("a, b != None")
 
 # third_none_check(None,None)                     ---------> a == b == None은 a,b 둘다 None이여야만 성립
+
+
+# if not True:
+#     print("1")
+# else:
+#     print("2")
+
+graph = dict()
+ 
+graph['A'] = ['B', 'C']
+graph['B'] = ['A', 'D']
+graph['C'] = ['A', 'G']
+
+node = 'A'
+
+a = ['banana']
+b = {1,2,3}
+x = []
+
+# x.append(graph['A'])
+x.append(b)
+print(x)
