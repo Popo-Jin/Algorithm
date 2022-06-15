@@ -1,3 +1,26 @@
+# from collections import deque
+# import time
+
+# start_time = time.time() #시작 시간
+# ###
+# # a = []
+# a = deque()
+# b = []
+# c = []
+# for num in range(0,10000000):
+#     # a.append(num)
+#     b.append(num)
+# while a:
+#     num = b.pop()
+#     # num = a.popleft()
+#     # num = a.pop()
+#     c.append(num)
+# ###
+# end_time = time.time() #종료 시간
+
+# print("알고리즘 수행 시간 : ", end_time - start_time)
+
+
 # def while_check(data):
 #     i = 0
 #     while data:
@@ -35,18 +58,19 @@
 # else:
 #     print("2")
 
-graph = dict()
+
+# graph = dict()
  
-graph['A'] = ['B', 'C']
-graph['B'] = ['A', 'D']
-graph['C'] = ['A', 'G']
+# graph['A'] = ['B', 'C']
+# graph['B'] = ['A', 'D']
+# graph['C'] = ['A', 'G']
 
-node = 'A'
+# node = 'A'
 
-a = ['banana']
-b = {1,2,3}
-x = []
+# a = ['banana']
+# b = {1,2,3}
+# x = []
 
-# x.append(graph['A'])
-x.append(b)
-print(x)
+# # x.append(graph['A'])
+# x.append(b)
+# print(x)
