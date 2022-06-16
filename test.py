@@ -7,11 +7,15 @@ def solution(lottos, win_nums):
             cnt += 1
         if i == 0:
             zero += 1
-    # answer = []
-    # return answer
-    return cnt, zero
 
-lottos = [6, 44, 2, 18, 40, 39]
+    answer = []
+    answer.append(-(cnt+zero)+7)
+    answer.append(-(cnt)+7)
+
+    return answer
+
+
+lottos = [0, 0, 0, 0, 4, 2]
 win_nums = [2, 4, 16, 19, 26, 39]
 
 print(solution(lottos, win_nums))
