@@ -1,27 +1,15 @@
-# n,m = map(int, input().split())
-# map = [[0 for _ in range(m)]for _ in range(n)]
-# dis = [[0 for _ in range(m)]for _ in range(n)]
-# for i in range(n):
-#     a = input()
-#     map[i] = list(map(int, str(a)))
-#     print(map)
-n = 4
-m = 6
-map = [[0 for _ in range(m)]for _ in range(n)]
-a = input()
-b = list(map(int, a))
-print(b)
-
-# def solution(new_id):
-#     new_id = new_id.lower()
-#     answer=""
-#     for i in new_id:
-#         if i=='-' or i=='_' or i=='.' or i.isdigit() or i.isalpha():
-#             answer += i
-#     print(answer)
+def solution(new_id):
+    new_id = new_id.lower()
+    answer=""
+    pre = ''
+    for i in new_id:
+        if i=='-' or i=='_' or i=='.' or i.isdigit() or i.isalpha():
+            answer += i
+    
+    print(answer)
 
 
-# solution("...!@BaT#*..y..abcdefghijklm")
+solution("...!@BaT#*..y..abcdefghijklm")
 
 # def solution(lottos, win_nums):
 #     cnt = 0
