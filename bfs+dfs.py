@@ -37,4 +37,4 @@ graph['I'] = ['C', 'J']
 graph['J'] = ['I']
 
 print(bfs(graph, 'A'))
-print(dfs(graph, 'A'))
+# print(dfs(graph, 'A'))

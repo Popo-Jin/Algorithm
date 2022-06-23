@@ -1,10 +1,11 @@
-<<<<<<< HEAD
 def solution(new_id):
     new_id = new_id.lower()
     answer=""
+    pre = ''
     for i in new_id:
         if i=='-' or i=='_' or i=='.' or i.isdigit() or i.isalpha():
             answer += i
+    
     print(answer)
 
 
@@ -28,29 +29,6 @@ solution("...!@BaT#*..y..abcdefghijklm")
 # win_nums = [2, 4, 16, 19, 26, 39]
 
 # print(solution(lottos, win_nums))
-=======
-def solution(lottos, win_nums):
-    cnt = 0
-    zero = 0
-
-    for i in lottos:
-        if i in win_nums:
-            cnt += 1
-        if i == 0:
-            zero += 1
-
-    answer = []
-    answer.append(-(cnt+zero)+7)
-    answer.append(-(cnt)+7)
-
-    return answer
-
-
-lottos = [0, 0, 0, 0, 4, 2]
-win_nums = [2, 4, 16, 19, 26, 39]
-
-print(solution(lottos, win_nums))
->>>>>>> 4869b1292f17882290ce90a22783e57b2162be11
 
 # def solution(id_list, report, k):
 #     # 계정별 신고한 계정 목록 딕셔너리 생성(id_dict)
