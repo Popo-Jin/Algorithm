@@ -1,15 +1,20 @@
-def solution(new_id):
-    new_id = new_id.lower()
-    answer=""
-    pre = ''
-    for i in new_id:
-        if i=='-' or i=='_' or i=='.' or i.isdigit() or i.isalpha():
-            answer += i
+a = '6 3 2 10 10 10 -10 -10 7 3'
+
+b = list(map(int, a.split()))
+print(b)
+
+# def solution(new_id):
+#     new_id = new_id.lower()
+#     answer=""
+#     pre = ''
+#     for i in new_id:
+#         if i=='-' or i=='_' or i=='.' or i.isdigit() or i.isalpha():
+#             answer += i
     
-    print(answer)
+#     print(answer)
 
 
-solution("...!@BaT#*..y..abcdefghijklm")
+# solution("...!@BaT#*..y..abcdefghijklm")
 
 # def solution(lottos, win_nums):
 #     cnt = 0
