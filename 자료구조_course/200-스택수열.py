@@ -10,7 +10,4 @@
 1
 '''
 N = int(input())
-num = [i+1 for i in range(N)]
-stack = []
-print(num)
-    
+stack = [i+1 for i in range(N)]
