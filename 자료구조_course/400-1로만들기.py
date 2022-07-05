@@ -1,18 +1,13 @@
 X = int(input())
-List_X = [0]*1000000
-cnt = 0
-while List_X[1] == 0:
+List_X = [0]*(X+1)
 
-    if X%3 == 0:
-        result = X//3
-        if List_X[result] == 0:
-            List_X[result] = 1
-    elif X%2 == 0:
-        result = X//2
-        if List_X[result] == 0:
-            List_X[result] = 1
-    else:
-        result = X-1
-        if List_X[result] == 0:
-            List_X[result] = 1
+for i in range(2, X+1):
 
+    List_X[i] = List_X[i-1]+1
+
+    if i%3 == 0:
+        List_X[i] = min(List_X[i], List_X[i//3]+1)
+    if i%2 == 0:
+        List_X[i] = min(List_X[i], List_X[i//2]+1)
+
+print(List_X[X])

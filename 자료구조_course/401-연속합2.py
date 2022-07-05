@@ -17,9 +17,9 @@ for i in range(len(m)):
     if m[i] >= 0:
         result += m[i]
     else:
-        if result != 0:
-            f.append(result)
-            result = 0
+        f.append(result)
+        f.append(m[i])
+        result = 0
 
 for i in range(len(f)):
     if f[i] >= 0:
