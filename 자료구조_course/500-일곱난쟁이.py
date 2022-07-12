@@ -13,7 +13,7 @@ for i in range(len(n)):
 
                 for i in range(len(n)):
                     print(n[i])
-                break
+                exit()
 
 
 
